@@ -11,6 +11,11 @@
     box-sizing: border-box;
 }
 
+.conc {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 body {
     font: normal 1rem/1.5 'Arial' sans-serif;
     background: var(--primary-color);
