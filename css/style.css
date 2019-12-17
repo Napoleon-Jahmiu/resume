@@ -135,12 +135,12 @@ body {
 
 }
 
-@media screen and (max-width:600px){
+@media (max-width:600px){
  #timeline ul li {
     margin-left: 20px;
  }
 #timeline ul li div {
-    width: 300px;
+    width: calc(100vw-100px)
 }
 
 #timeline ul li:nth-child(even) div {
@@ -155,4 +155,31 @@ body {
     border-color: transparent var(--secondary-color) transparent transparent;
 }
 
+}
+
+@media (max-width:320px) {
+#header h1{
+    font-size: 1.7rem;
+}
+
+#header h3 { font-size: 1.1rem;}
+
+#timeline ul li {
+    margin-left: 10px;
+ }
+#timeline ul li div {
+    width: 250px;
+}
+
+#timeline ul li:nth-child(even) div {
+    left: 40px;
+    background: var(--secondary-color);
+    color: var(--pritext-color);
+}
+
+#timeline ul li:nth-child(even) div:before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--secondary-color) transparent transparent;
+}
 }
