@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #425b84;
+    --secondary-color: white;
+    --max-width: 1100px;
+    --pritext-color: #5b7bb4;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: normal 1rem/1.5 'Arial' sans-serif;
+    background: var(--primary-color);
+    color: #fff;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+}
+
+#header {
+    background: var(--secondary-color);
+    padding: 4rem 0;
+    /* margin: auto; */
+    color: var(--pritext-color);
+    /* width: var(--max-width); */
+}
+
+.container {
+    /* width: var(--max-width); */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    text-align: center;
+    /* justify-content: center; */
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+#timeline ul {
+    background: var(--primary-color);
+    padding: 50px 0;  
+}
+
+#timeline ul li div h3 {
+    padding-bottom: 10px;
+}
+
+#timeline ul li div p {
+    font-size: 1rem;
+    text-justify: auto;
+}
+
+/* create line */
+#timeline ul li {
+    list-style: none;
+    position: relative;
+    width: 6px;
+    background: var(--secondary-color);
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+/* create boxes */
+#timeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 1rem;  
+    /* if margin is placed here instead of padding, the li lines breaks. */
+    background: var(--pritext-color);
+    transition: all 0.4 ease-in-out;
+}
+
+/* Right Side */ 
+#timeline ul li:nth-child(odd) div {
+    left: 40px;
+}
+
+ 
+#timeline ul li:nth-child(even) div {
+    right: 434px;
+}
+
+/*  for circle inside the line */
+#timeline ul li::after {
+    content: "";
+    position: absolute;
+    background: var(--pritext-color);
+    left: 50%;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    transition: background 0.5 ease-in-out;  
+}
+
+/* for Arrow */
+#timeline div::before{
+    position: absolute;
+    content: "";
+    bottom: 5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+/* for arrow left */
+#timeline ul li:nth-child(odd) div:before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--pritext-color) transparent transparent;
+}
+
+/* for arrow right */
+#timeline ul li:nth-child(even) div:before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent var(--pritext-color);
+}
+
+@media (max-width:900px) {
+ #timeline ul li div {
+ width: 280px;
+ }
+
+ #timeline ul li:nth-child(even) div {
+    right: 315px;
+ }
+
+}
+
+@media screen and (max-width:600px){
+ #timeline ul li {
+    margin-left: 20px;
+ }
+#timeline ul li div {
+    width: 300px;
+}
+
+#timeline ul li:nth-child(even) div {
+    left: 40px;
+    background: var(--secondary-color);
+    color: var(--pritext-color);
+}
+
+#timeline ul li:nth-child(even) div:before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--secondary-color) transparent transparent;
+}
+
+}
